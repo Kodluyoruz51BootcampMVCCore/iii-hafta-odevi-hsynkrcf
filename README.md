@@ -43,40 +43,18 @@ Bir developerın yaptığı test ile karşılaştım sonuçları aşağıda :)
 #### Genel olarak, mümkün olan her yerde daha yüksek düzeyde soyutlama kullanmanızı tavsiye ederim; Modern C# kodunda nadiren açıkça kendi iş parçacığını başlatmanız gerekir.
 ![All](https://neharustagiblog.files.wordpress.com/2014/09/blog4.png)
 
-## Extension Metod Nedir? Nasıl Yazılır ?
-Basit ve Kısa olarak anlatıyorum, bende MVC için extension metod yazmıştım.
+## VS Extensions
+Visual Studio uzantılarını yüklemek ve yönetmek için **Uzantıları Yönet** iletişim kutusunu kullanın.**Uzantıları Yönet** iletişim kutusunu açmak için **Uzantıları > Yönet Uzantıları**'nıseçin. Veya arama kutusuna **Uzantılar** yazın ve **Uzantıları Yönet** seçin.
 
-- Extension metodlar herhangi bir yeni nesne oluşturmadan, üzerinde işlem yaptığınız nesne üzerinden çağrılabilen "genişletilmiş" manasına gelen çok pratik metodlardır. Bu metodları kullanarak hem extra iş yükünden kurtulmuş olursunuz, hem de sürekli aynı kodları yazmak zorunda kalmazsınız.
+![Extension](https://docs.microsoft.com/tr-tr/visualstudio/ide/media/finding-using-visual-studio-extensions/extensions-and-updates.png?view=vs-2019)
 
-  ```cs
-  public static class ExtensionClass  {  
-    public static int IntCevir(this string Deger)  
-    {  
-        return Int32.Parse(Deger);  
-    }  
-  }  
-  ```
-- Genellikle ilk string'e bir extension yazarak başlarız. Burada dikkat etmeniz gereken en önemli nokta parametrenin this anahtar kelimesi ile başlamasıdır. Bu ifade ile metodumuzun extension metod olduğunu belirtiyoruz. Şöyle kullanılıyor;
+### Uzantıları bulma ve yükleme
+**Visual Studio Marketplace'ten** uzantılar veya Visual Studio'da Uzantıları Yönet iletişim kutusundan yükleyebilirsiniz.
+Visual Studio içinden uzantıları yüklemek için:
+1. **Uzantıları > Yönet Uzantıları'ndan**, yüklemek istediğiniz uzantıyı bulun. (Uzantının adını veya bölümünü biliyorsanız, Arama penceresinde arama yapabilirsiniz.)
+2. **Download (İndir)** seçeneğini belirleyin.
+Uzantı yüklemek için zamanlanır. Visual Studio'nun tüm örnekleri kapatıldıktan sonra uzantınız yüklenir.
+Bağımlılıkları olan bir uzantıyı yüklemeye çalışırsanız, yükleyici bunların yüklenmiş olup olmadığını denetler. Bunlar yüklenmezse, Uzantıları Yönet iletişim kutusu, uzantıyı yükleyemeden önce yüklenmesi gereken **bağımlılıkları** listeler.
 
-![Extension](https://www.hikmetokumus.com/MakImages/24-08-2012-02.jpg)
-
-###### Buda benim yaptığıma benzer bir örnek kendi html extension metodunuzu yazabilirsiniz.
-  ```cs
-   //Example of a Static class
-    public static class HtmlHelpers
-    {
-        //Your Extension method
-        public static MvcHtmlString DatePickerDropDowns(this HtmlHelper html,
-            string dayName, string monthName, string yearName,
-            int? beginYear = null, int? endYear = null,
-            int? selectedDay = null, int? selectedMonth = null, int? selectedYear = null, bool localizeLabels = true)
-        {
-            //Example
-            return new MvcHtmlString("Example");
-        }
-    }
-  ```
-###### Yazdığınız metodu böyle kullanabilirsiniz.
-@using YourProject.HtmlHelpers;
-
-@Html.DatePickerDropDowns(...)
+### Uzantıyı kaldırma veya devre dışı kaldırma
+Bir uzantıyı kullanmayı bırakmak isterseniz devre dışı bırakabilir veya kaldırabilirsiniz. Bir uzantı devre dışı bırakıldığında yüklü kalır, ancak etkin değildir. Uzantıyı bulun ve **Kaldır** veya **Devre Dışı Kaldır** tıklatın. Devre dışı bırakılmış bir uzantıyı boşaltmak için Visual Studio'yı yeniden başlatın.
