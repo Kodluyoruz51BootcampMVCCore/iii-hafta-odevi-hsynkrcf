@@ -58,3 +58,4 @@ Bağımlılıkları olan bir uzantıyı yüklemeye çalışırsanız, yükleyici
 
 ### Uzantıyı kaldırma veya devre dışı kaldırma
 Bir uzantıyı kullanmayı bırakmak isterseniz devre dışı bırakabilir veya kaldırabilirsiniz. Bir uzantı devre dışı bırakıldığında yüklü kalır, ancak etkin değildir. Uzantıyı bulun ve **Kaldır** veya **Devre Dışı Kaldır** tıklatın. Devre dışı bırakılmış bir uzantıyı boşaltmak için Visual Studio'yı yeniden başlatın.
+<p align="center"><strong>Hüseyin Karacif tarafından :heart: ile hazırlandı.</strong></p>
